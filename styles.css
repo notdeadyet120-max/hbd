@@ -1,0 +1,27 @@
+/* Black theme colors (inside :root) */
+--background: oklch(0.13 0.01 260);          /* deep black */
+--foreground: oklch(0.96 0.01 250);          /* near white */
+--primary: oklch(0.63 0.24 22);              /* Valorant red */
+--accent: oklch(0.78 0.18 150);              /* Minecraft green */
+--border: oklch(0.96 0.01 250 / 12%);
+
+/* Fonts + custom effects */
+@theme {
+  --font-display: "Orbitron", sans-serif;    /* gaming headings */
+  --font-body: "Rajdhani", sans-serif;
+}
+
+@utility text-glow-red {
+  text-shadow: 0 0 24px color-mix(in oklab, var(--primary) 80%, transparent);
+}
+
+@utility pixel-border {                       /* Minecraft-style chunky border */
+  box-shadow: 0 -4px 0 0 oklch(0.35 0.1 150) inset, 0 4px 0 0 oklch(0.25 0.06 150) inset,
+    -4px 0 0 0 oklch(0.3 0.08 150) inset, 4px 0 0 0 oklch(0.3 0.08 150) inset;
+}
+
+@utility bg-grid {                            /* subtle grid background */
+  background-image: linear-gradient(oklch(0.96 0.01 250 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.96 0.01 250 / 4%) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
